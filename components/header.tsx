@@ -3,9 +3,8 @@
 import { auth } from "@/auth";
 import Link from "next/link";
 
-export default async function  Header  () {
-
- const session = await auth();
+export default async function Header() {
+  const session = await auth();
 
   return (
     <header className="bg-gray-800 p-4">
@@ -37,12 +36,14 @@ export default async function  Header  () {
         {!session?.user ? (
           <p>Vous n&apos;êtes pas authentifié</p>
         ) : (
-          <p>
-            Bienvenue, vous êtes connecté avec le compte {session.user.email}
-          </p>
+          <>
+            <p>
+              Bienvenue, vous êtes connecté avec le compte {session.user.email}
+            </p>
+            <p>Vous avez un role de {session.user.role}</p> 
+          </>
         )}
       </div>
     </header>
   );
-};
-
+}
