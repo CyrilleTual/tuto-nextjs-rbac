@@ -1,3 +1,5 @@
+/* hoc/withAuth.tsx */
+
 import Unauthorized from "@/components/unauthorized";
 import { auth } from "../auth";
 

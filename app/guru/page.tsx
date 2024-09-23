@@ -1,3 +1,5 @@
+/* app/guru/page.tsx*/
+
 import WithAuth from "@/hoc/withAuth";
 
 function GuruPage() {
