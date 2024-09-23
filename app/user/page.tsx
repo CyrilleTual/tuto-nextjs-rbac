@@ -1,9 +1,6 @@
-import React from 'react'
+import WithAuth from "@/hoc/withAuth";
 
-export default function UserPage() {
-  return (
-    <div className="flex items-center justify-center min-h-screen">
-      <h1 className="text-center text-2xl">User Page</h1>
-    </div>
-  );
+function UserPage() {
+  return <h1 className="text-center text-2xl">User Page</h1>;
 }
+export default WithAuth(UserPage, ["admin", "guru", "user"]);

@@ -5,11 +5,10 @@ import { SignOut } from "@/components/sign-out";
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-8 items-center justify-center min-h-screen">
+    <div className="flex flex-col gap-8 items-center justify-center  ">
       <h1 className="text-center text-2xl">Landing Page</h1>
       <SignIn />
       <SignOut />
-      
     </div>
   );
 }

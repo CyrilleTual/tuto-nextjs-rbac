@@ -1,9 +1,8 @@
-import React from 'react'
+/* app/admin/page.tsx */
+import WithAuth from "../../hoc/withAuth";
 
-export default function AdminPage() {
-  return (
-    <div className="flex items-center justify-center min-h-screen">
-      <h1 className="text-center text-2xl">Admin Page</h1>
-    </div>
-  );
+function AdminPage() {
+  return <h1 className="text-center text-2xl">Admin Page</h1>;
 }
+
+export default WithAuth(AdminPage, ["admin"]);
