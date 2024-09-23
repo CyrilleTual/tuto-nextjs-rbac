@@ -1,16 +1,15 @@
 /* hoc/withAuth.tsx */
 
 import Unauthorized from "@/components/unauthorized";
-import { auth } from "../auth";
+import { Session } from "next-auth";
 
-async function WithAuth<T extends JSX.IntrinsicAttributes>(
+function WithAuth<T extends JSX.IntrinsicAttributes>(
   WrappedComponent: React.ComponentType<T>,
+  session: Session | null,
   allowedRoles: string[] = []
 ) {
-  const session = await auth();
-
   return function AuthWrapper(props: T) {
-    return session?.user.role && allowedRoles.includes(session.user.role) ? (
+    return session?.user?.role && allowedRoles.includes(session.user.role) ? (
       <WrappedComponent {...props} />
     ) : <Unauthorized />;
   };
