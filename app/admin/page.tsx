@@ -1,7 +1,7 @@
 /* app/admin/page.tsx */
 import WithAuth from "../../hoc/withAuth";
 
-function AdminPage() {
+const AdminPage : React.FC = () => {
   return <h1 className="text-center text-2xl">Admin Page</h1>;
 }
 
