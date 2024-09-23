@@ -1,6 +1,7 @@
 import Header from "@/components/header";
 import "./globals.css";
- 
+import { SessionProvider } from "next-auth/react";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -8,12 +9,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body className="h-screen flex flex-col" >
-        <Header />
-        <div className="flex items-center justify-center flex-grow">
-           {children}
-        </div>
-      </body>
+      <SessionProvider>
+        <body className="h-screen flex flex-col">
+          <Header />
+          <div className="flex items-center justify-center flex-grow">
+            {children}
+          </div>
+        </body>
+      </SessionProvider>
     </html>
   );
 }

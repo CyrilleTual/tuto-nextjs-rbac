@@ -1,4 +1,4 @@
-/*components/unauthorized.tsx */
+
 
 import Link from "next/link";
 
