@@ -1,3 +1,5 @@
+/* app/layout.tsx */
+
 import Header from "@/components/header";
 import "./globals.css";
 import { SessionProvider } from "next-auth/react";
