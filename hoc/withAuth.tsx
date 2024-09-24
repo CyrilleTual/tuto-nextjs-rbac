@@ -3,11 +3,10 @@
 
 import { useSession } from "next-auth/react"; 
 import { useRouter } from "next/navigation";
-
 import { useEffect } from "react";
 
 const withAuth = (Component: React.FC, allowedRoles: string[]) => {
-  const AuthenticatedComponent: React.FC<any> = (props) => {
+  const AuthenticatedComponent: React.FC<React.ComponentProps<typeof Component>> = (props) => {
     const { data: session, status } = useSession();
     const router = useRouter();
 
