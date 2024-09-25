@@ -1,10 +1,10 @@
-// pages/api/revalidate/route.js
+// app/api/revalidate/route.js
 
 import { NextApiRequest, NextApiResponse } from "next";
 
 export const POST = async (req: NextApiRequest, res: NextApiResponse) =>{
-    console.log ("revalidate");
     try {
+        console.log("Revalidating paths");
         // Liste des chemins à invalider
         const paths = ["/user", "/guru", "admin"];
         for (const path of paths) {

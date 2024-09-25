@@ -6,10 +6,10 @@ import { signOut } from "next-auth/react";
 export function SignOut() {
   const handleSignOut = async () => {
     signOut();
-    // Appeler l'API pour invalider les chemins
-    await fetch("/api/revalidate", {
+   // Appeler l'API pour invalider les chemins
+    await fetch("/api/auth/revalidate", {
       method: "POST",
-    });
+    }); 
   };
 
   return (
